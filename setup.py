@@ -8,5 +8,6 @@ setup(
     license='',
     author='Oliver Rudow',
     author_email='oliver.rudow@googlemail.com',
-    description='basic data base class'
+    description='basic data base class',
+    install_requires=['pandas', 'file_base_me', 'auxiliary_me', 'config_me', 'tuple_me']
 )
