@@ -308,7 +308,7 @@ class MyTableSQL(myTableBase.MyTableBase):
         # create table
         if self._my_sql_connection and self._my_sql_cursor:
 
-            str_text = (f'CREATE TABLE IF NOT EXISTS{self._str_sql_schema}.{self._str_table_name}'
+            str_text = (f'CREATE TABLE IF NOT EXISTS {self._str_sql_schema}.{self._str_table_name}'
                        f'({str_table_definition})')
 
             try:
@@ -326,7 +326,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     def delete_sql_data_base_rows(self, str_table_name: str, str_column_name: str, str_column_content: str) -> None:
 
-        str_text = f'DELETE from{self._str_sql_schema}.{str_table_name} WHERE {str_column_name} = "{str_column_content}"'
+        str_text = f'DELETE from {self._str_sql_schema}.{str_table_name} WHERE {str_column_name} = "{str_column_content}"'
 
         if self._my_sql_connection and self._my_sql_cursor:
 
@@ -377,7 +377,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     def update_table_put_row_index(self) -> None:
 
-        str_text = f'SELECT ROWID FROM{self._str_table_name} ORDER BY ROWID DESC LIMIT 1'
+        str_text = f'SELECT ROWID FROM {self._str_table_name} ORDER BY ROWID DESC LIMIT 1'
 
         result = 0
 
@@ -427,7 +427,7 @@ class MyTableSQL(myTableBase.MyTableBase):
     def get_table_single_column_from_data_frame(self, str_column_name: str) -> list[Any]:
         my_list: list[str] = []
 
-        str_text = f"SELECT{str_column_name} FROM {self._str_table_name}"
+        str_text = f"SELECT {str_column_name} FROM {self._str_table_name}"
 
         if self._my_sql_connection and self._my_sql_cursor:
 
@@ -451,7 +451,7 @@ class MyTableSQL(myTableBase.MyTableBase):
         return my_list
 
     def set_table_single_column_into_data_frame(self, str_column_name: str, list_objects: list[Any]) -> None:
-        str_sql_data_base_insert = (f'INSERT OR IGNORE INTO{self._str_sql_schema}.{self._str_table_name} '
+        str_sql_data_base_insert = (f'INSERT OR IGNORE INTO {self._str_sql_schema}.{self._str_table_name} '
                                 f'({str_column_name}) VALUES (?)')
 
         if self._my_sql_connection and self._my_sql_cursor:
@@ -509,12 +509,12 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         if flag_with_row_id:
 
-            str_text = (f'SELECT ROWID, * FROM{self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID ASC LIMIT 1 '
+            str_text = (f'SELECT ROWID, * FROM {self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID ASC LIMIT 1 '
                        f'OFFSET {str_offset}')
 
         else:
 
-            str_text = (f'SELECT * FROM{self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID ASC LIMIT 1 '
+            str_text = (f'SELECT * FROM {self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID ASC LIMIT 1 '
                        f'OFFSET {str_offset}')
 
         if self._my_sql_connection and self._my_sql_cursor:
@@ -550,7 +550,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         list_result = []
 
-        str_text = f'SELECT * FROM{self._str_sql_schema}.{self._str_table_name}'
+        str_text = f'SELECT * FROM {self._str_sql_schema}.{self._str_table_name}'
 
         if self._get_sql_alive:
 
@@ -589,7 +589,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         list_result = []
 
-        str_text = f'SELECT{str_column_name} FROM {self._str_sql_schema}.{self._str_table_name}'
+        str_text = f'SELECT {str_column_name} FROM {self._str_sql_schema}.{self._str_table_name}'
 
         if self._my_sql_connection and self._my_sql_cursor:
 
