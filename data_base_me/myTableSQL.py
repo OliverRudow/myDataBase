@@ -636,6 +636,17 @@ class MyTableSQL(myTableBase.MyTableBase):
 
                 exit(1)
 
-            print(list_result)
+            if list_result.__len__() > 0:
 
-        return 3
+                return list_result[0][0]
+
+            else:
+
+                return 0
+
+        else:
+
+            return 0
+
+
+
