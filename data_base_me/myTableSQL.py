@@ -613,3 +613,29 @@ class MyTableSQL(myTableBase.MyTableBase):
             list_result[i] = list_result[i][0]
 
         return list_result
+
+    def get_table_number_rows(self) -> int:
+
+        str_text = f'SELECT COUNT(*) FROM {self._str_sql_schema}.{self._str_table_name}'
+
+        if self._my_sql_connection and self._my_sql_cursor:
+
+            try:
+
+                self._my_sql_cursor.execute(str_text)
+
+                list_result = self._my_sql_cursor.fetchall()
+
+                self._my_sql_connection.commit()
+
+            except sqlite3.OperationalError as err:
+
+                print(
+                    f'---- Operational Error in {__title__}, {self.get_table_entire_column.__name__} ----, \n'
+                    f'---- the Text {str_text} has caused an Error {err} ! ----')
+
+                exit(1)
+
+            print(list_result)
+
+        return 3
