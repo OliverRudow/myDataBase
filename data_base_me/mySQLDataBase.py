@@ -13,7 +13,7 @@ import sqlite3
 from data_base_me import myTableSQL
 from file_base_me import myFileBase
 
-STR_SQL_DATA_BASE_NAME: str = 'test.db'
+STR_SQL_DATA_BASE_NAME: str = '../test_oliver.db'
 
 @dataclasses.dataclass(init=False)
 class MySQLDataBase:
@@ -60,6 +60,8 @@ class MySQLDataBase:
 
                 self._str_sql_data_base_name = self._file_base.get_entire_file_name
 
+                print(self._str_sql_data_base_name)
+
         except ValueError:
 
             print(f'---- ValueError in {__title__}, {self.set_sql_data_base_name.__name__}: '
@@ -84,7 +86,7 @@ class MySQLDataBase:
 
         except sqlite3.OperationalError as e:
 
-            print("Error:", e)
+            print(f"Error in {__title__}, {self.open_sql_data_base.__name__}:, {e}")
 
     def get_sql_data_base_name(self) -> str:
         return self._str_sql_data_base_name
@@ -111,6 +113,8 @@ if __name__ == "__main__":
     my_data.set_sql_data_base_name(STR_SQL_DATA_BASE_NAME)
     my_data.open_sql_data_base()
     my_table_sql = myTableSQL.MyTableSQL(my_data.get_connection(), my_data.get_cursor())
+    my_table_sql.set_sql_data_base_schema('main')
+    my_table_sql.set_table_name('oliver')
     my_table_sql.get_sql_data_base_table_info_list()
     my_table_sql.print_sql_data_base_table_info()
     my_data.close_sql_data_base()
