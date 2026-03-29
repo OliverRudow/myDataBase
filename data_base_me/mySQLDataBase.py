@@ -14,7 +14,7 @@ from data_base_me import myTableSQL
 from file_base_me import myFileBase
 
 STR_SQL_DATA_DIR_NAME: str = '../Data'
-STR_SQL_DATA_BASE_NAME: str = '../test_oliver.db'
+STR_SQL_DATA_BASE_NAME: str = 'test.db'
 
 @dataclasses.dataclass(init=False)
 class MySQLDataBase:
