@@ -1,7 +1,7 @@
 """myTableSQL.py."""
 
 __title__: str = "myTableSQL"
-__version__: str = "1.0"
+__version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
@@ -10,7 +10,7 @@ __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 import dataclasses
 import sqlite3
-from typing import Any
+from typing import Any, Optional
 from data_base_me import myTableBase
 from auxiliary_me import myAuxiliary
 
@@ -631,7 +631,7 @@ class MyTableSQL(myTableBase.MyTableBase):
             except sqlite3.OperationalError as err:
 
                 print(
-                    f'---- Operational Error in {__title__}, {self.get_table_entire_column.__name__} ----, \n'
+                    f'---- Operational Error in {__title__}, {self.get_table_number_rows.__name__} ----, \n'
                     f'---- the Text {str_text} has caused an Error {err} ! ----')
 
                 exit(1)
@@ -648,5 +648,51 @@ class MyTableSQL(myTableBase.MyTableBase):
 
             return 0
 
+    def group_table_column_as_histogram(self, str_column_name: str, bool_order_result_desc: Optional[bool] = None) -> list:
+
+        list_result = []
+
+        if bool_order_result_desc:
+
+            str_text = (f'SELECT {str_column_name}, COUNT(*) AS anzahl FROM '
+                        f'{self._str_sql_schema}.{self._str_table_name} GROUP BY '
+                        f'{str_column_name} HAVING COUNT(*) > 1 ORDER BY anzahl DESC')
+
+
+        else:
+
+            str_text = (f'SELECT {str_column_name}, COUNT(*) AS anzahl FROM '
+                        f'{self._str_sql_schema}.{self._str_table_name} GROUP BY '
+                        f'{str_column_name} HAVING COUNT(*) > 1')
+
+        if self._my_sql_connection and self._my_sql_cursor:
+
+            try:
+
+                self._my_sql_cursor.execute(str_text)
+
+                list_result = self._my_sql_cursor.fetchall()
+
+                self._my_sql_connection.commit()
+
+            except sqlite3.OperationalError as err:
+
+                print(
+                    f'---- Operational Error in {__title__}, {self.group_table_column_as_histogram.__name__} ----, \n'
+                    f'---- the Text {str_text} has caused an Error {err} ! ----')
+
+                exit(1)
+
+            if list_result.__len__() > 0:
+
+                return list_result
+
+            else:
+
+                return []
+
+        else:
+
+            return []
 
 
