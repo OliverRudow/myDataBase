@@ -61,8 +61,6 @@ class MySQLDataBase:
 
                 self._str_sql_data_base_name = self._file_base.get_entire_file_name
 
-                print(self._str_sql_data_base_name)
-
         except ValueError:
 
             print(f'---- ValueError in {__title__}, {self.set_sql_data_base_name.__name__}: '
