@@ -1,7 +1,7 @@
 """myTablePandas.py."""
 
 __title__: str = "myTablePandas"
-__version__: str = "1.0"
+__version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
@@ -28,10 +28,12 @@ class MyTablePandas(myTableBase.MyTableBase):
 
     # data frame row index for getting and putting a line
     _int_table_put_row_index: int = dataclasses.field(repr=False, default=0)
+
     _int_table_get_row_index: int = dataclasses.field(repr=False, default=0)
 
     # column selection for writing and reading pandas dataframes to file or from file
     _list_table_columns_storage: list[str] = dataclasses.field(repr=False, default=list[str])
+
     _list_table_columns_read: list[str] = dataclasses.field(repr=False, default=list[str])
 
     # File Base
@@ -43,12 +45,15 @@ class MyTablePandas(myTableBase.MyTableBase):
         self._file_base = myFileBase.MyFileBase()
 
     def set_list_table_columns_storage(self, list_table_columns_storage: list[str]) -> None:
+
         self._list_table_columns_storage = list_table_columns_storage
 
     def set_list_table_columns_read(self, list_table_columns_read: list[str]) -> None:
+
         self._list_table_columns_read = list_table_columns_read
 
     def reset_table_pandas(self) -> None:
+
         self._pd_table_data_frame = pd.DataFrame([], columns=list(self._dict_table_columns.values()))
 
     def write_table_pandas(self) -> None:
@@ -97,36 +102,44 @@ class MyTablePandas(myTableBase.MyTableBase):
         except FileNotFoundError:
 
             print(f'----- FileNotFoundError: File {self._str_table_name} does not exist -----')
+
             exit(1)
 
         except pd.errors.EmptyDataError:
 
             print(f'----- File empty error: File {self._str_table_name} has no content -----')
+
             exit(1)
 
         except pd.errors.ParserError:
 
             print(f'----- Parse error: File {self._str_table_name} failed -----')
+
             exit(1)
 
         except Exception as error:
 
             print(error)
+
             exit(1)
 
     def update_table_put_row_index(self) -> None:
+
         self._int_table_put_row_index = self._pd_table_data_frame.__len__()
 
     @property
     def get_size_table_data_frame(self) -> int:
+
         return getsizeof(self._pd_table_data_frame)
 
     @property
     def get_table_put_row_index(self) -> int:
+
         return self._int_table_put_row_index
 
     @property
     def get_table_get_row_index(self) -> int:
+
         return self._int_table_get_row_index
 
     def set_sable_individual_value_row_index_column_index(self,
@@ -136,49 +149,63 @@ class MyTablePandas(myTableBase.MyTableBase):
         try:
 
             if int_row_index > self._int_table_put_row_index:
+
                 raise ValueError(f'---- ValueError: set Value in Pandas data Frame failed, RoW Index {int_row_index} out'
                                  f'of Range! ----')
 
             if int_column_index >= self._int_table_columns_number:
+
                 raise ValueError(f'---- ValueError: set Value in Pandas data Frame failed, RoW Index {int_column_index} '
                                  f'out of Range! ----')
 
             self._pd_table_data_frame.iat[int_row_index, int_column_index] = all_value
 
         except ValueError as e:
+
             print(e)
+
             exit(1)
 
     def get_table_individual_value_row_index_column_index(self, int_row_index: int, int_column_index: int) -> Any:
         try:
+
             if int_row_index > self._int_table_put_row_index:
+
                 raise ValueError(f'---- ValueError: set Value in Pandas data Frame failed, RoW Index {int_row_index} out'
                                  f'of Range! ----')
 
             if int_column_index >= self._int_table_columns_number:
+
                 raise ValueError(f'---- ValueError: set Value in Pandas data Frame failed, RoW Index {int_column_index} '
                                  f'out of Range! ----')
 
             return self._pd_table_data_frame.iat[int_row_index, int_column_index]
 
         except ValueError as e:
+
             print(e)
+
             exit(1)
 
     def get_table_single_column_from_data_frame(self, list_column_name: list[str]) -> list[Any]:
         try:
+
             if list_column_name.__len__() != 1:
-                raise ValueError(f'---- ValueError: getting a column from  Pandas data Frame failed, List Column'
+
+                raise ValueError(f'---- ValueError: getting a column from Pandas data Frame failed, List Column'
                                  f'Names {list_column_name} exceeds dimension 1! ---- ')
 
             if list_column_name[0] not in self._list_table_columns_read:
+
                 raise pd.errors.InvalidColumnName(f'----PandasColumnError: {list_column_name} is not a '
                                                   f'DataFrame Column -----!')
 
             return list(self._pd_table_data_frame[list_column_name[0]])
 
         except pd.errors.InvalidColumnName as e:
+
             print(e)
+
             exit(1)
 
     def set_table_entire_row(self, list_entire_row: list[Any]) -> None:
@@ -200,7 +227,9 @@ class MyTablePandas(myTableBase.MyTableBase):
             self._pd_table_data_frame.loc[self._int_table_put_row_index] = list_entire_row
 
         except ValueError as e:
+
             print(e)
+
             exit(1)
 
     def get_table_as_dict(self) -> list:

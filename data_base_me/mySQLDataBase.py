@@ -1,7 +1,7 @@
 """mySQLDataBase.py."""
 
 __title__: str = "mySQLDataBase"
-__version__: str = "1.0"
+__version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
@@ -69,9 +69,11 @@ class MySQLDataBase:
             exit(1)
 
     def set_sql_connection_timeout(self, float_timeout: float) -> None:
+
         self._float_sql_connection_timeout = float_timeout
 
     def set_sql_connection_uri(self, bool_uri: bool) -> None:
+
         self._bool_sql_connection_uri = bool_uri
 
     def open_sql_data_base(self) -> None:
@@ -88,20 +90,25 @@ class MySQLDataBase:
             print(f"Error in {__title__}, {self.open_sql_data_base.__name__}:, {e}")
 
     def get_sql_data_base_name(self) -> str:
+
         return self._str_sql_data_base_name
 
     def get_connection(self) -> sqlite3.Connection:
+
         return self._my_sql_connection
 
     def get_cursor(self) -> sqlite3.Cursor:
+
         return self._my_sql_cursor
 
     def close_sql_data_base(self) -> None:
+
         if self._my_sql_connection:
 
             self._my_sql_connection.close()
 
     def drop_sql_table(self, str_table) -> None:
+
         if self._my_sql_connection and self._my_sql_cursor:
 
             self._my_sql_cursor.execute(f'DROP TABLE IF EXISTS {str_table}')

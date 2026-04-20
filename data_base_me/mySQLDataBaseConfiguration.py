@@ -1,7 +1,7 @@
 """mySQLDataBaseConfiguration.py."""
 
 __title__: str = "mySQLDataBaseConfiguration"
-__version__: str = "1.0"
+__version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
 __copyright__: str = "Copyright 2025, Brain Center Höfen"
 

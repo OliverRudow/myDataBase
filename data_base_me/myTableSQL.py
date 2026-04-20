@@ -69,6 +69,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     # data frame row index for getting and putting a line
     _int_table_put_row_index: int = dataclasses.field(repr=False, default=0)
+
     _int_table_get_row_index: int = dataclasses.field(repr=False, default=0)
 
     def __init__(self,
@@ -86,10 +87,12 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     @property
     def get_sql_schema(self) -> str:
+
         return self._str_sql_schema
 
     @property
     def get_table_sql_bool(self) -> bool:
+
         return self._bool_sql_data_base_table
 
     @property
@@ -105,9 +108,11 @@ class MyTableSQL(myTableBase.MyTableBase):
 
 
     def set_sql_data_base_schema(self, str_schema: str) -> None:
+
         self._str_sql_schema = str_schema
 
     def set_sql_dict_table_names(self, dict_sql_table_names: dict[str, str]) -> None:
+
         self._dict_sql_table_names = dict_sql_table_names
 
     def get_sql_data_base_table_list(self) -> None:
@@ -154,6 +159,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
                 if (self._list_sql_given_tables_names[num][TABLE_LIST_SCHEMA] == self._str_sql_schema and
                         self._list_sql_given_tables_names[num][TABLE_LIST_TABLE_TYPE] == 'table'):
+
                     self._int_sql_number_of_tables_in_schema += 1
 
             self._my_sql_connection.commit()
@@ -172,6 +178,7 @@ class MyTableSQL(myTableBase.MyTableBase):
                 if myAuxiliary.check_date_in_object_name(str_table_name):
 
                     if str_table_name.startswith(str_table_name_starts_with):
+
                         list_tables.append(str_table_name)
 
             list_tables.sort(reverse=True)
@@ -189,7 +196,9 @@ class MyTableSQL(myTableBase.MyTableBase):
             del list_tables[-1]
 
     def check_sql_data_base_table_exists(self) -> bool:
+
         if self._list_sql_given_tables_names.__len__() == 0:
+
             self.get_sql_data_base_table_list()
 
         bool_result = False
@@ -198,6 +207,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
             if (self._list_sql_given_tables_names[num][TABLE_LIST_TABLE_NAME] == self._str_table_name and
                     self._list_sql_given_tables_names[num][TABLE_LIST_TABLE_TYPE] == 'table'):
+
                 bool_result = True
 
         return bool_result
@@ -272,6 +282,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     def check_sql_data_base_table_column_name(self, str_column: str) -> bool:
         if self._list_given_sql_table_info.__len__() == 0:
+
             self.get_sql_data_base_table_info_list()
 
         bool_result = False
@@ -279,6 +290,7 @@ class MyTableSQL(myTableBase.MyTableBase):
         for num in range(self._list_given_sql_table_info.__len__()):
 
             if self._list_given_sql_table_info[num][TABLE_INFO_NAME_COLUMN] == str_column:
+
                 bool_result = True
 
         return bool_result
@@ -287,6 +299,7 @@ class MyTableSQL(myTableBase.MyTableBase):
         bool_result = True
 
         for elem in list_column_names:
+
             bool_result = bool_result and self.check_sql_data_base_table_column_name(elem)
 
         return bool_result
@@ -414,6 +427,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     def get_column_index_from_sql_pragma_list(self, str_column_name: str) -> int | None:
         if self._list_given_sql_table_info.__len__() == 0:
+
             self.get_sql_data_base_table_info_list()
 
         for elem in self._list_given_sql_table_info:
@@ -451,6 +465,7 @@ class MyTableSQL(myTableBase.MyTableBase):
         return my_list
 
     def set_table_single_column_into_data_frame(self, str_column_name: str, list_objects: list[Any]) -> None:
+
         str_sql_data_base_insert = (f'INSERT OR IGNORE INTO {self._str_sql_schema}.{self._str_table_name} '
                                 f'({str_column_name}) VALUES (?)')
 
@@ -461,6 +476,7 @@ class MyTableSQL(myTableBase.MyTableBase):
                 try:
 
                     for elem in list_objects:
+
                         tuple_elem = tuple([elem])
 
                         self._my_sql_cursor.execute(str_sql_data_base_insert, tuple_elem)
@@ -480,19 +496,25 @@ class MyTableSQL(myTableBase.MyTableBase):
         try:
 
             if tuple_entire_row.__len__() == 0:
+
                 raise ValueError(f'----- Value Error {__title__}, {self.set_table_entire_row.__name__}, '
                                  f'Data Base {self._str_table_name}: Input Line {tuple_entire_row} to '
                                  f'Data Output is empty -----')
 
             if tuple_entire_row.__len__() != self._int_table_columns_number:
+
                 raise ValueError(f'----- Value Error {__title__}, {self.set_table_entire_row.__name__},'
                                  f'Data Base {self._str_table_name}: Input Line {tuple_entire_row} '
                                  f'to Data Output is corrupt -----')
 
             if self._my_sql_connection and self._my_sql_cursor:
+
                 self._my_sql_cursor.execute(str_insert_string, tuple_entire_row)
+
                 # update last rowid of SQL table
-                self._int_table_put_row_index = self._my_sql_cursor.lastrowid + 1
+                if self._my_sql_cursor.lastrowid is not None:
+
+                    self._int_table_put_row_index = self._my_sql_cursor.lastrowid + 1
 
                 self._my_sql_connection.commit()
 
@@ -503,6 +525,7 @@ class MyTableSQL(myTableBase.MyTableBase):
             exit(1)
 
     def get_table_entire_row(self, int_row_id: int, flag_with_row_id: bool) -> tuple:
+
         str_offset = str(int_row_id - 1)
 
         tuple_result = ()
@@ -610,6 +633,7 @@ class MyTableSQL(myTableBase.MyTableBase):
                 exit(1)
 
         for i in range(list_result.__len__()):
+
             list_result[i] = list_result[i][0]
 
         return list_result

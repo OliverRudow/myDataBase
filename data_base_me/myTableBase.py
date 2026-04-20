@@ -1,7 +1,7 @@
 """myTableBase.py."""
 
 __title__: str = "myTableBase"
-__version__: str = "1.0"
+__version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
@@ -38,22 +38,35 @@ class MyTableBase:
 
     """
     _index_tuple: myTuple.MyTuple = dataclasses.field(repr=False)
+
     _int_number_tuple_elements: int = dataclasses.field(repr=False, default=0)
+
     _str_table_name: str = dataclasses.field(repr=True, default='')
+
     _dict_table_settings: dict[str, tuple] = dataclasses.field(repr=False, default=dict[str, tuple])
+
     _dict_table_columns: dict[str, str] = dataclasses.field(repr=False, default=dict[str, str])
+
     _enum_table_columns_index: Enum = dataclasses.field(repr=False, default=type(Enum))
+
     _list_table_column_keys: list[str] = dataclasses.field(repr=False, default=list[str])
+
     _int_table_columns_number: int = dataclasses.field(repr=False, default=0)
+
     # add date to table name
     _flag_add_date_2_file_name: bool = dataclasses.field(repr=False, default=False)
+
     # handling of preceded tables
     _flag_clean_preceded_tables: bool = dataclasses.field(repr=False, default=True)
+
     _int_number_preceded_tables: int = dataclasses.field(repr=False, default=0)
 
     def __init__(self):
+
         self._index_tuple = myTuple.MyTuple
+
         self._int_number_tuple_elements = len(myTuple.MyTuple)
+
         self._str_table_name = 'default'
 
     def set_table_name(self, str_table_name) -> None:
@@ -73,18 +86,22 @@ class MyTableBase:
             exit(1)
 
     def set_flag_add_date_2_table_name(self, bool_add_date: bool) -> None:
+
         self._flag_add_date_2_file_name = bool_add_date
 
     def set_flag_clean_preceded_tables(self, bool_clean_tables: bool) -> None:
+
         self._flag_clean_preceded_tables = bool_clean_tables
 
     def set_number_preceded_tables(self, int_number_preceded_tables: int) -> None:
+
         self._int_number_preceded_tables = int_number_preceded_tables
 
     def set_dict_table_settings(self, dict_table_settings: dict[str, tuple]) -> None:
         try:
 
             if dict_table_settings.__len__() == 0:
+
                 raise ValueError
 
             self._dict_table_settings = dict_table_settings
@@ -102,10 +119,12 @@ class MyTableBase:
 
             print(f'---- ValueError in {__title__}, {self.set_dict_table_settings.__name__}: '
                   f'init of table {self._str_table_name} failed, dictTableSettings is empty -----')
+
             exit(1)
 
     def _derive_dict_table_columns(self) -> None:
         self._dict_table_columns = {}
+
         for elem in self._dict_table_settings.keys():
             # get tuple
             the_tuple = self._dict_table_settings[elem]
@@ -113,32 +132,43 @@ class MyTableBase:
             self._dict_table_columns[elem] = the_tuple[COLUMN_NAME]
 
     def _derive_dict_table_column_keys(self) -> None:
+
         self._list_table_column_keys = list(self._dict_table_settings.keys())
 
     def _derive_dict_table_columns_number(self) -> None:
+
         self._int_table_columns_number = self._list_table_column_keys.__len__()
 
     @property
     def get_table_name(self) -> str:
+
         return self._str_table_name
 
     @property
     def get_table_number_columns(self) -> int:
+
         return self._int_table_columns_number
 
     def get_column_name_from_dict(self, tuple_column_setting: tuple) -> str:
         try:
+
             if tuple_column_setting.__len__() != self._int_number_tuple_elements:
+
                 raise ValueError(f'---- ValueError in {__title__}, {self.get_column_name_from_dict.__name__}:'
                                  f' the input tuple {tuple_column_setting} is corrupt!-----')
+
             if self._dict_table_columns.__len__() == 0:
+
                 raise ValueError(f'---- ValueError in {__title__}, {self.get_column_name_from_dict.__name__}: '
                                  f'the dictTableColumns is empty, '
                                  f'can not apply tuple {tuple_column_setting}! ----')
-            return self._dict_table_columns[tuple_column_setting[self._index_tuple.OPTION_NAME.value]]
+
+            return self._dict_table_columns[tuple_column_setting[self._index_tuple.OPTION_NAME]]
 
         except ValueError as e:
+
             print(e)
+
             exit(1)
 
     def get_column_index_from_list(self, tuple_column_setting: tuple) -> int:
@@ -148,11 +178,13 @@ class MyTableBase:
 
                 raise ValueError
 
-            return self._list_table_column_keys.index(tuple_column_setting[self._index_tuple.OPTION_NAME.value])
+            return self._list_table_column_keys.index(tuple_column_setting[self._index_tuple.OPTION_NAME])
 
         except ValueError:
+
             print(f'---- ValueError in {__title__}, {self.get_column_index_from_list.__name__}: '
                   f'the input tuple {tuple_column_setting} is corrupt!-----')
+
             exit(1)
 
 
