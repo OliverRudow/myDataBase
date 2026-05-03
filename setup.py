@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='myDataBase',
-    version='0.1.0',
+    version='0.1.1',
     packages=['data_base_me'],
     url='',
     license='',

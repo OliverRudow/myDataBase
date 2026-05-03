@@ -1,7 +1,7 @@
 """myTableSQL.py."""
 
 __title__: str = "myTableSQL"
-__version__: str = "0.1.0"
+__version__: str = "0.1.1"
 __author__: str = "Oliver Rudow"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
@@ -719,4 +719,21 @@ class MyTableSQL(myTableBase.MyTableBase):
 
             return []
 
+    def sort_desc_table_acc_column(self, str_column_name: str) -> None:
 
+        str_text = f'SELECT * FROM {self._str_table_name} ORDER BY {str_column_name} DESC'
+
+        if self._get_sql_alive:
+
+            try:
+
+                self._my_sql_cursor.execute(str_text)
+
+                self._my_sql_connection.commit()
+
+            except sqlite3.OperationalError as err:
+
+                print(f'---- Operational Error in {__title__}, {self.sort_desc_table_acc_column.__name__} ----, \n'
+                      f'---- the Text {str_text} has caused an Error {err} ! ----')
+
+                exit(1)
