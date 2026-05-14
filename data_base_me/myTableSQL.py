@@ -195,7 +195,15 @@ class MyTableSQL(myTableBase.MyTableBase):
 
             del list_tables[-1]
 
-    def check_sql_data_base_table_exists(self) -> bool:
+    def check_sql_data_base_table_exists(self, str_table_name: Optional[str] = None) -> bool:
+
+        if str_table_name is None:
+
+            _str_table_name = self._str_table_name
+
+        else:
+
+            _str_table_name = str_table_name
 
         if self._list_sql_given_tables_names.__len__() == 0:
 
@@ -205,7 +213,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         for num in range(self._list_sql_given_tables_names.__len__()):
 
-            if (self._list_sql_given_tables_names[num][TABLE_LIST_TABLE_NAME] == self._str_table_name and
+            if (self._list_sql_given_tables_names[num][TABLE_LIST_TABLE_NAME] == _str_table_name and
                     self._list_sql_given_tables_names[num][TABLE_LIST_TABLE_TYPE] == 'table'):
 
                 bool_result = True
@@ -304,7 +312,16 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         return bool_result
 
-    def create_sql_data_base_table(self) -> None:
+    def create_sql_data_base_table(self, str_table_name: Optional[str] = None) -> None:
+
+        if str_table_name is None:
+
+            _str_table_name = self._str_table_name
+
+        else:
+
+            _str_table_name = str_table_name
+
         # get string for table definitions
         my_list = []
 
@@ -321,7 +338,7 @@ class MyTableSQL(myTableBase.MyTableBase):
         # create table
         if self._my_sql_connection and self._my_sql_cursor:
 
-            str_text = (f'CREATE TABLE IF NOT EXISTS {self._str_sql_schema}.{self._str_table_name}'
+            str_text = (f'CREATE TABLE IF NOT EXISTS {self._str_sql_schema}.{_str_table_name}'
                        f'({str_table_definition})')
 
             try:
