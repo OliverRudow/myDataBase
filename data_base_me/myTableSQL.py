@@ -1,8 +1,9 @@
 """myTableSQL.py."""
 
 __title__: str = "myTableSQL"
-__version__: str = "0.1.1"
+__version__: str = "0.1.2"
 __author__: str = "Oliver Rudow"
+__email__: str = "oliver.rudow@googlemail.com"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 # Press ⌃R to execute it or replace it with your code.
@@ -655,9 +656,23 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         return list_result
 
-    def get_table_number_rows(self) -> int:
+    def get_table_number_rows(self, str_table_name: Optional[str] = None) -> int:
 
-        str_text = f'SELECT COUNT(*) FROM {self._str_sql_schema}.{self._str_table_name}'
+        if str_table_name is None:
+
+            if not str_table_name == '':
+
+                _str_table_name = str_table_name
+
+            else:
+
+                _str_table_name = self._str_table_name
+
+        else:
+
+            _str_table_name = self._str_table_name
+
+        str_text = f'SELECT COUNT(*) FROM {self._str_sql_schema}.{_str_table_name}'
 
         if self._my_sql_connection and self._my_sql_cursor:
 
