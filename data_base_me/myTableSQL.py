@@ -658,7 +658,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     def get_table_number_rows(self, str_table_name: Optional[str] = None) -> int:
 
-        if str_table_name is None:
+        if str_table_name is not None:
 
             if not str_table_name == '':
 
