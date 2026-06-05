@@ -221,7 +221,7 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         return bool_result
 
-    def get_sql_data_base_table_info_list(self) -> None:
+    def get_sql_data_base_table_info_list(self, str_table_name: Optional[str] = None) -> None:
         """
             the function provides a list of tuples giving information about the columns of a specified table.
 
@@ -236,9 +236,15 @@ class MyTableSQL(myTableBase.MyTableBase):
             Output:
             _listGivenSQLTableInfo
         """
-        if self._my_sql_connection and self._my_sql_cursor:
+        if str_table_name is None:
 
             str_text = f'PRAGMA table_info("{self._str_table_name}")'
+
+        else:
+
+            str_text = f'PRAGMA table_info("{str_table_name}")'
+
+        if self._my_sql_connection and self._my_sql_cursor:
 
             try:
 
@@ -255,12 +261,19 @@ class MyTableSQL(myTableBase.MyTableBase):
 
                 exit(1)
 
-    def check_sql_data_base_table_is_not_empty(self) -> bool:
+    def check_sql_data_base_table_is_not_empty(self, str_table_name: Optional[str] = None) -> bool:
         """
             Function checks whatever a given SQL table is empty or not
         """
-        str_sql_data_base_check_empty_table = (
-            f'SELECT exists (SELECT 1 FROM{self._str_table_name})')
+        if str_table_name is None:
+
+            str_sql_data_base_check_empty_table = (
+                f'SELECT exists (SELECT 1 FROM{self._str_table_name})')
+
+        else:
+
+            str_sql_data_base_check_empty_table = (
+                f'SELECT exists (SELECT 1 FROM{str_table_name})')
 
         if self._my_sql_connection and self._my_sql_cursor:
 
@@ -289,10 +302,15 @@ class MyTableSQL(myTableBase.MyTableBase):
 
             return False
 
-    def check_sql_data_base_table_column_name(self, str_column: str) -> bool:
-        if self._list_given_sql_table_info.__len__() == 0:
+    def check_sql_data_base_table_column_name(self, str_column: str, str_table_name: Optional[str] = None) -> bool:
+
+        if str_table_name is None:
 
             self.get_sql_data_base_table_info_list()
+
+        else:
+
+            self.get_sql_data_base_table_info_list(str_table_name)
 
         bool_result = False
 
@@ -305,6 +323,7 @@ class MyTableSQL(myTableBase.MyTableBase):
         return bool_result
 
     def check_sql_data_base_table_all_column_names(self, list_column_names: list[str]) -> bool:
+
         bool_result = True
 
         for elem in list_column_names:
