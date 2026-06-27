@@ -3,6 +3,7 @@
 __title__: str = "myTablePandas"
 __version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
+__email__: str = "oliver.rudow@googlemail.com"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 # Press ⌃R to execute it or replace it with your code.
@@ -12,8 +13,8 @@ import dataclasses
 import pandas as pd
 from sys import getsizeof
 from typing import Optional, Any
-from data_base_me import myTableBase
-from file_base_me import myFileBase
+from mydatabase import myTableBase
+from myfilebase import myFileBase
 
 
 @dataclasses.dataclass(init=False)

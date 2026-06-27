@@ -1,8 +1,9 @@
 """mySQLDataBaseConfiguration.py."""
 
 __title__: str = "mySQLDataBaseConfiguration"
-__version__: str = "0.1.0"
+__version__: str = "0.3.0"
 __author__: str = "Oliver Rudow"
+__email__: str = "oliver.rudow@googlemail.com"
 __copyright__: str = "Copyright 2025, Brain Center Höfen"
 
 # Press ⌃R to execute it or replace it with your code.
@@ -11,8 +12,8 @@ __copyright__: str = "Copyright 2025, Brain Center Höfen"
 import dataclasses
 import configparser
 from typing import Optional
-from config_me import myConfigBase
-from data_base_me import mySQLDataBaseDefinitions
+from myconfig import myConfigBase
+from mydatabase import mySQLDataBaseDefinitions
 
 CONFIG_FILENAME: str = '../System/Init/config.ini'
 REFERENCE_CONFIG_FILENAME: str = '../System/reference-config.ini'

@@ -3,6 +3,7 @@
 __title__: str = "myTableBase"
 __version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
+__email__: str = "oliver.rudow@googlemail.com"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 # Press ⌃R to execute it or replace it with your code.
@@ -10,8 +11,8 @@ __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 import dataclasses
 from enum import Enum
-from auxiliary_me import myAuxiliary
-from tuple_me import myTuple
+from myauxiliary import myAuxiliary
+from mytuple import myTuple
 
 COLUMN_NAME = 0
 

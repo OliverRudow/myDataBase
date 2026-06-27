@@ -1,7 +1,7 @@
 """myTableSQL.py."""
 
 __title__: str = "myTableSQL"
-__version__: str = "0.1.2"
+__version__: str = "0.3.0"
 __author__: str = "Oliver Rudow"
 __email__: str = "oliver.rudow@googlemail.com"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
@@ -12,8 +12,8 @@ __copyright__: str = "Copyright 2024, Brain Center Höfen"
 import dataclasses
 import sqlite3
 from typing import Any, Optional
-from data_base_me import myTableBase
-from auxiliary_me import myAuxiliary
+from mydatabase import myTableBase
+from myauxiliary import myAuxiliary
 
 """
     SQL PRAGMA TABLE LIST: Tuple Definition

@@ -3,6 +3,7 @@
 __title__: str = "mySQLDataBase"
 __version__: str = "0.1.0"
 __author__: str = "Oliver Rudow"
+__email__: str = "oliver.rudow@googlemail.com"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 # Press ⌃R to execute it or replace it with your code.
@@ -10,8 +11,8 @@ __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 import dataclasses
 import sqlite3
-from data_base_me import myTableSQL
-from file_base_me import myFileBase
+from mydatabase import myTableSQL
+from myfilebase import myFileBase
 
 STR_SQL_DATA_DIR_NAME: str = '../Data'
 STR_SQL_DATA_BASE_NAME: str = 'test.db'

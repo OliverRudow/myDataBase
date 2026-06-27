@@ -1,8 +1,9 @@
 """mySQLDataBaseDefinitions.py."""
 
 __title__: str = "mySQLDataBaseDefinitions"
-__version__: str = "0.1.0"
+__version__: str = "0.3.0"
 __author__: str = "Oliver Rudow"
+__email__: str = "oliver.rudow@googlemail.com"
 __copyright__: str = "Copyright 2024, Brain Center Höfen"
 
 
