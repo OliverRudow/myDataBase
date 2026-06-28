@@ -13,14 +13,13 @@ pip install mydatabase
 
 Since this package contains multiple files, here is a quick overview of how the modules interact:
 
-myDataBase/
-│
-├── __init__.py
-├── mySQLDataBase.py                       # SQLite fundamental functions
-├── mySQLDataBaseConfiguration.py          # functions to read config files
-└── mySQLDataBaseDefinitions.py            # SQLite DataBase definition parameter
-├── myTableBase.py                         # common functions
-├── myTablePandas.py                       # PANDAS specific functions
+myDataBase/     
+├── __init__.py     
+├── mySQLDataBase.py                       # SQLite fundamental functions   
+├── mySQLDataBaseConfiguration.py          # functions to read config files     
+├── mySQLDataBaseDefinitions.py            # SQLite DataBase definition parameter       
+├── myTableBase.py                         # common functions   
+├── myTablePandas.py                       # PANDAS specific functions  
 ├── myTableSQL.py                          # SQLite specific functions
 ```
 

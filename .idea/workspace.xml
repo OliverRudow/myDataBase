@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05e7ff2d-75f7-46e5-b6db-c589006f7003" name="Changes" comment="str_table_name as option for function call implemented to some functions">
-      <change afterPath="$PROJECT_DIR$/Data/test_oliver.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/lib/mydatabase/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/lib/mydatabase/mySQLDataBase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/lib/mydatabase/mySQLDataBaseConfiguration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/lib/mydatabase/mySQLDataBaseDefinitions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/lib/mydatabase/myTableBase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/lib/mydatabase/myTablePandas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/lib/mydatabase/myTableSQL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mydatabase/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myDataBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myDataBase.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_me/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/test.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_me/mySQLDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_me/mySQLDataBaseConfiguration.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/mySQLDataBaseConfiguration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_me/mySQLDataBaseDefinitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/mySQLDataBaseDefinitions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_me/myTableBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_me/myTablePandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTablePandas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_me/myTableSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableSQL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" />
-    </list>
+    <list default="true" id="05e7ff2d-75f7-46e5-b6db-c589006f7003" name="Changes" comment="major changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -301,6 +279,7 @@
       <workItem from="1782503863591" duration="13000" />
       <workItem from="1782531752317" duration="4520000" />
       <workItem from="1782548486829" duration="1312000" />
+      <workItem from="1782552969736" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -422,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780666500921</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="major changes">
+      <option name="closed" value="true" />
+      <created>1782552986992</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1782552986992</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +428,8 @@
     <MESSAGE value="check table and create table reworked" />
     <MESSAGE value="get_table_number_rows reowrked" />
     <MESSAGE value="str_table_name as option for function call implemented to some functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="str_table_name as option for function call implemented to some functions" />
+    <MESSAGE value="major changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="major changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
