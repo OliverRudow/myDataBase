@@ -47,7 +47,7 @@ class MyTableSQL(myTableBase.MyTableBase):
     _my_sql_connection: sqlite3.Connection = dataclasses.field(repr=False, default=type(sqlite3.connect))
 
     # the SQL Cursor is relevant to send and receive SQL Data Base Information
-    _my_sql_cursor: sqlite3.Cursor = dataclasses.field(repr=False, default=type(sqlite3.Cursor))
+    _my_sql_cursor: sqlite3.Cursor = dataclasses.field(repr=False, default_factory=type(sqlite3.Cursor))
 
     # SQL Data Base Schema holding the relevant Tables
     _str_sql_schema: str = dataclasses.field(repr=False, default='')
@@ -56,12 +56,12 @@ class MyTableSQL(myTableBase.MyTableBase):
     _dict_sql_table_names: dict[str, str] = dataclasses.field(repr=False, default=dict[str, str])
 
     # SQL Given Table Names
-    _list_sql_given_tables_names: list[tuple] = dataclasses.field(repr=False, default=())
+    _list_sql_given_tables_names: list[tuple] = dataclasses.field(repr=False, default_factory=type(list[tuple]))
 
     _int_sql_number_of_tables_in_schema: int = dataclasses.field(repr=False, default=0)
 
     # Python SQLITE3 settings
-    _list_given_sql_table_info: list[tuple] = dataclasses.field(repr=False, default=())
+    _list_given_sql_table_info: list[tuple] = dataclasses.field(repr=False, default_factory=type(list[tuple]))
 
     _int_sql_table_row_number: int = dataclasses.field(repr=False, default=0)
 
@@ -352,7 +352,7 @@ class MyTableSQL(myTableBase.MyTableBase):
             # joint tuple to string with whitespace
             my_list.append(' '.join(my_tuple))
 
-        # joint liat to string with comma separator
+        # joint list to string with comma separator
         str_table_definition = ', '.join(my_list)
 
         # create table
@@ -569,12 +569,12 @@ class MyTableSQL(myTableBase.MyTableBase):
 
         if flag_with_row_id:
 
-            str_text = (f'SELECT ROWID, * FROM {self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID ASC LIMIT 1 '
+            str_text = (f'SELECT ROWID, * FROM {self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID LIMIT 1 '
                        f'OFFSET {str_offset}')
 
         else:
 
-            str_text = (f'SELECT * FROM {self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID ASC LIMIT 1 '
+            str_text = (f'SELECT * FROM {self._str_sql_schema}.{self._str_table_name} ORDER BY ROWID LIMIT 1 '
                        f'OFFSET {str_offset}')
 
         if self._my_sql_connection and self._my_sql_cursor:

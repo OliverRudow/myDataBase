@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05e7ff2d-75f7-46e5-b6db-c589006f7003" name="Changes" comment="major changes" />
+    <list default="true" id="05e7ff2d-75f7-46e5-b6db-c589006f7003" name="Changes" comment="major changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydatabase/myTableBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydatabase/myTablePandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTablePandas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydatabase/myTableSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableSQL.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +120,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_base_me" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mydatabase" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -205,6 +211,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.myConfigBase" />
+      <item itemvalue="Python.mySQLDataBase" />
+      <item itemvalue="Python.mySQLDataBaseConfiguration" />
+      <item itemvalue="Python.myTableBase" />
+      <item itemvalue="Python.myTablePandas" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.mySQLDataBase" />
@@ -218,8 +231,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.25134.203" />
-        <option value="bundled-python-sdk-245168a56dbd-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.25134.203" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.8665.369" />
+        <option value="bundled-python-sdk-6fa658e1df1a-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.369" />
       </set>
     </attachedChunks>
   </component>
@@ -280,6 +293,10 @@
       <workItem from="1782531752317" duration="4520000" />
       <workItem from="1782548486829" duration="1312000" />
       <workItem from="1782552969736" duration="625000" />
+      <workItem from="1782659421409" duration="153000" />
+      <workItem from="1783263042962" duration="258000" />
+      <workItem from="1784363847977" duration="9000" />
+      <workItem from="1786197557895" duration="388000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -409,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782552986992</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="major changes">
+      <option name="closed" value="true" />
+      <created>1782659563022</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1782659563022</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
