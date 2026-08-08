@@ -38,7 +38,7 @@ class MyTablePandas(myTableBase.MyTableBase):
     _list_table_columns_read: list[str] = dataclasses.field(repr=False, default=list[str])
 
     # File Base
-    _file_base: myFileBase.MyFileBase = dataclasses.field(repr=False, default=type(myFileBase.MyFileBase))
+    _file_base: myFileBase.MyFileBase = dataclasses.field(repr=False, default_factory=type(myFileBase.MyFileBase))
 
     def __init__(self):
         super().__init__()

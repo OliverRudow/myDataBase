@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydatabase/myTableBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydatabase/myTablePandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTablePandas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydatabase/myTableSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableSQL.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +295,8 @@
       <workItem from="1782659421409" duration="153000" />
       <workItem from="1783263042962" duration="258000" />
       <workItem from="1784363847977" duration="9000" />
-      <workItem from="1786197557895" duration="388000" />
+      <workItem from="1786197557895" duration="461000" />
+      <workItem from="1786204995717" duration="81000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -434,7 +434,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782659563022</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="major changes">
+      <option name="closed" value="true" />
+      <created>1786197950661</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1786197950661</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,10 +496,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/myDataBase$mySQLDataBase.coverage" NAME="mySQLDataBase Coverage Results" MODIFIED="1774716117529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_base_me" />
     <SUITE FILE_PATH="coverage/myDataBase$myTableBase.coverage" NAME="myTableBase Coverage Results" MODIFIED="1774544259568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_base_me" />
+    <SUITE FILE_PATH="coverage/myDataBase$mySQLDataBase.coverage" NAME="mySQLDataBase Coverage Results" MODIFIED="1786205050316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mydatabase" />
     <SUITE FILE_PATH="coverage/myDataBase$myTablePandas.coverage" NAME="myTablePandas Coverage Results" MODIFIED="1774694653915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_base_me" />
-    <SUITE FILE_PATH="coverage/myDataBase$mySQLDataBaseConfiguration.coverage" NAME="mySQLDataBaseConfiguration Coverage Results" MODIFIED="1774683988230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_base_me" />
     <SUITE FILE_PATH="coverage/myDataBase$myConfigBase.coverage" NAME="myConfigBase Coverage Results" MODIFIED="1774626587002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.14/site-packages/config_me" />
+    <SUITE FILE_PATH="coverage/myDataBase$mySQLDataBaseConfiguration.coverage" NAME="mySQLDataBaseConfiguration Coverage Results" MODIFIED="1774683988230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_base_me" />
   </component>
 </project>

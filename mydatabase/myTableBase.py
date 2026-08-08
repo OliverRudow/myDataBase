@@ -48,7 +48,7 @@ class MyTableBase:
 
     _dict_table_columns: dict[str, str] = dataclasses.field(repr=False, default=dict[str, str])
 
-    _enum_table_columns_index: Enum = dataclasses.field(repr=False, default=type(Enum))
+    _enum_table_columns_index: Enum = dataclasses.field(repr=False, default_factory=type(Enum))
 
     _list_table_column_keys: list[str] = dataclasses.field(repr=False, default=list[str])
 
