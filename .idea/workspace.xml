@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05e7ff2d-75f7-46e5-b6db-c589006f7003" name="Changes" comment="minor changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mydatabase/myTableSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableSQL.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -295,7 +296,9 @@
       <workItem from="1784363847977" duration="9000" />
       <workItem from="1786197557895" duration="461000" />
       <workItem from="1786204995717" duration="177000" />
-      <workItem from="1786205320590" duration="156000" />
+      <workItem from="1786205320590" duration="225000" />
+      <workItem from="1786205593419" duration="199000" />
+      <workItem from="1786206194888" duration="1111000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -449,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786205096138</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1786205514931</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1786205514931</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

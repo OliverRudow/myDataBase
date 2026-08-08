@@ -44,10 +44,10 @@ class MyTableSQL(myTableBase.MyTableBase):
 
     """
     # the SQL Connection is the Python access to SQL Data Base
-    _my_sql_connection: sqlite3.Connection = dataclasses.field(repr=False, default=type(sqlite3.connect))
+    _my_sql_connection: sqlite3.Connection = dataclasses.field(repr=False, default = type(sqlite3.connect))
 
     # the SQL Cursor is relevant to send and receive SQL Data Base Information
-    _my_sql_cursor: sqlite3.Cursor = dataclasses.field(repr=False, default_factory=type(sqlite3.Cursor))
+    _my_sql_cursor: sqlite3.Cursor = dataclasses.field(repr=False, default_factory = type(sqlite3.Cursor))
 
     # SQL Data Base Schema holding the relevant Tables
     _str_sql_schema: str = dataclasses.field(repr=False, default='')
@@ -56,12 +56,12 @@ class MyTableSQL(myTableBase.MyTableBase):
     _dict_sql_table_names: dict[str, str] = dataclasses.field(repr=False, default=dict[str, str])
 
     # SQL Given Table Names
-    _list_sql_given_tables_names: list[tuple] = dataclasses.field(repr=False, default = list[tuple])
+    _list_sql_given_tables_names: list[tuple] = dataclasses.field(repr=False, default_factory = list[tuple])
 
     _int_sql_number_of_tables_in_schema: int = dataclasses.field(repr=False, default=0)
 
     # Python SQLITE3 settings
-    _list_given_sql_table_info: list[tuple] = dataclasses.field(repr=False, default = list[tuple])
+    _list_given_sql_table_info: list[tuple] = dataclasses.field(repr=False, default_factory = list[tuple])
 
     _int_sql_table_row_number: int = dataclasses.field(repr=False, default=0)
 
@@ -81,6 +81,12 @@ class MyTableSQL(myTableBase.MyTableBase):
         self._my_sql_connection = the_sql_connection
 
         self._my_sql_cursor = the_sql_cursor
+
+        self._dict_sql_table_names  = {}
+
+        self._list_sql_given_tables_names = []
+
+        self._list_given_sql_table_info = []
 
     """
         manage SQL Database

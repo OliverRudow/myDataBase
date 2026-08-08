@@ -28,10 +28,10 @@ class MySQLDataBase:
     _str_sql_data_base_name: str = dataclasses.field(repr=False, default='')
 
     # the SQL Connection is the Python access to SQL Data Base
-    _my_sql_connection: sqlite3.Connection = dataclasses.field(repr=False, default_factory=type(sqlite3.connect))
+    _my_sql_connection: sqlite3.Connection = dataclasses.field(repr=False, default = type(sqlite3.connect))
 
     # the SQL Cursor is relevant to send and receive SQL Data Base Information
-    _my_sql_cursor: sqlite3.Cursor = dataclasses.field(repr=False, default_factory=type(sqlite3.Cursor))
+    _my_sql_cursor: sqlite3.Cursor = dataclasses.field(repr=False, default_factory = type(sqlite3.Cursor))
 
     # Python SQLITE3 settings
     _float_sql_connection_timeout: float = dataclasses.field(repr=False, default=5.0)
@@ -39,7 +39,7 @@ class MySQLDataBase:
     _bool_sql_connection_uri: bool = dataclasses.field(repr=False, default=True)
 
     # File Base
-    _file_base: myFileBase.MyFileBase = dataclasses.field(repr=False, default_factory=type(myFileBase.MyFileBase))
+    _file_base: myFileBase.MyFileBase = dataclasses.field(repr=False, default_factory = type(myFileBase.MyFileBase))
 
     def __init__(self):
         super().__init__()
