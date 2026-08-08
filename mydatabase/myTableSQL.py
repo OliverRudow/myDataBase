@@ -56,12 +56,12 @@ class MyTableSQL(myTableBase.MyTableBase):
     _dict_sql_table_names: dict[str, str] = dataclasses.field(repr=False, default=dict[str, str])
 
     # SQL Given Table Names
-    _list_sql_given_tables_names: list[tuple] = dataclasses.field(repr=False, default_factory=type(list[tuple]))
+    _list_sql_given_tables_names: list[tuple] = dataclasses.field(repr=False, default = list[tuple])
 
     _int_sql_number_of_tables_in_schema: int = dataclasses.field(repr=False, default=0)
 
     # Python SQLITE3 settings
-    _list_given_sql_table_info: list[tuple] = dataclasses.field(repr=False, default_factory=type(list[tuple]))
+    _list_given_sql_table_info: list[tuple] = dataclasses.field(repr=False, default = list[tuple])
 
     _int_sql_table_row_number: int = dataclasses.field(repr=False, default=0)
 
