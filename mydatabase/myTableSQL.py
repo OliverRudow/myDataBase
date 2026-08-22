@@ -794,3 +794,54 @@ class MyTableSQL(myTableBase.MyTableBase):
                       f'---- the Text {str_text} has caused an Error {err} ! ----')
 
                 exit(1)
+
+    def rename_table(self, str_new_table_name: str) -> None:
+
+        if str_new_table_name.strip():
+
+            self.get_sql_data_base_table_list()
+
+            if self._str_table_name in self._list_sql_given_tables_names:
+
+                if not str_new_table_name in self._list_sql_given_tables_names:
+
+                    str_text = f'ALTER TABLE {self._str_table_name} RENAME TO {str_new_table_name} '
+
+                    if self._get_sql_alive:
+
+                        try:
+
+                            self._my_sql_cursor.execute(str_text)
+
+                            self._my_sql_connection.commit()
+
+                        except sqlite3.OperationalError as err:
+
+                            print(f'---- Operational Error in {__title__}, {self.rename_table.__name__} ----, \n'
+                                f'---- the Text {str_text} has caused an Error {err} ! ----')
+
+                            exit(1)
+
+    def rename_column_name(self, str_column_name: str, str_new_column_name) -> None:
+
+        if str_column_name.strip() and str_new_column_name.strip():
+
+            if str_new_column_name != str_column_name:
+
+                str_text = f'ALTER TABLE {self._str_table_name} RENAME COLUMN {str_column_name} TO {str_new_column_name} '
+
+                if self._get_sql_alive:
+
+                    try:
+
+                        self._my_sql_cursor.execute(str_text)
+
+                        self._my_sql_connection.commit()
+
+                    except sqlite3.OperationalError as err:
+
+                        print(f'---- Operational Error in {__title__}, {self.rename_column_name.__name__} ----, \n'
+                              f'---- the Text {str_text} has caused an Error {err} ! ----')
+
+                        exit(1)
+

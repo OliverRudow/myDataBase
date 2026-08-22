@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05e7ff2d-75f7-46e5-b6db-c589006f7003" name="Changes" comment="minor changes">
+    <list default="true" id="05e7ff2d-75f7-46e5-b6db-c589006f7003" name="Changes" comment="important changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/mySQLDataBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/test.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/test_oliver.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/mydatabase/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/mydatabase/mySQLDataBase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/mydatabase/mySQLDataBaseConfiguration.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/mydatabase/mySQLDataBaseDefinitions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/mydatabase/myTableBase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/mydatabase/myTablePandas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/mydatabase/myTableSQL.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mydatabase/myTableSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase/myTableSQL.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,8 +238,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.8665.369" />
-        <option value="bundled-python-sdk-6fa658e1df1a-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.369" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.9437.214" />
+        <option value="bundled-python-sdk-821f704e66d9-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.9437.214" />
       </set>
     </attachedChunks>
   </component>
@@ -299,6 +308,9 @@
       <workItem from="1786205320590" duration="225000" />
       <workItem from="1786205593419" duration="199000" />
       <workItem from="1786206194888" duration="1111000" />
+      <workItem from="1786207353230" duration="183000" />
+      <workItem from="1786371672996" duration="10000" />
+      <workItem from="1787389286492" duration="2357000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -460,7 +472,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786205514931</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="important changes">
+      <option name="closed" value="true" />
+      <created>1786207408459</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1786207408459</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +501,8 @@
     <MESSAGE value="str_table_name as option for function call implemented to some functions" />
     <MESSAGE value="major changes" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="important changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="important changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
